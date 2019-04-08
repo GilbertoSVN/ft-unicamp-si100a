@@ -20,6 +20,7 @@ __Os capítulos são referentes ao material oferecido pelo instrutor da discipli
 :+1:
 
 > FT-Unicamp, Limeira, 2019 - Algoritmos e Programação de Computadores I
+
 > Linguagem utilizada: **C**
 
 ```
