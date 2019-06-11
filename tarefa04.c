@@ -15,7 +15,6 @@ struct mensagem
 
 struct mensagem mens[MAX];
 
-
 int main()
 {
 	int i, j, opcao, total, achou;
@@ -203,6 +202,8 @@ int main()
         }
 
     } while (opcao != 0);
+
+    fflush(stdin);
 
 	return 0;
 }
