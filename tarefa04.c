@@ -49,12 +49,12 @@ int main()
                 mens[total].nome[strcspn(mens[total].nome, "\n")] = 0;
 
                 printf("Digite o departamento:\n");
-                fgets(mens[total].departamento, 62, stdin);
+                fgets(mens[total].departamento, 61, stdin);
 
                 mens[total].departamento[strcspn(mens[total].departamento, "\n")] = 0;
 
                 printf("Digite a mensagem a ser criptografada:\n");
-                fgets(mens[total].cryp_mens, 42, stdin);
+                fgets(mens[total].cryp_mens, 41, stdin);
 
                 for(j = 0; j < strlen(mens[total].cryp_mens); j++)
                 {
@@ -84,8 +84,8 @@ int main()
 
                 printf("Digite o padrao a ser encontrado:\n");
 
-                fgets(procura, 42, stdin);
-                fgets(procura, 42, stdin);
+                fgets(procura, 41, stdin);
+                fgets(procura, 41, stdin);
 
                 procura[strcspn(procura, "\n")] = 0;
 
@@ -123,8 +123,8 @@ int main()
 
                 printf("Digite a mensagem criptografada:\n");
 
-                fgets(procura, 42, stdin);
-                fgets(procura, 42, stdin);
+                fgets(procura, 41, stdin);
+                fgets(procura, 41, stdin);
 
                 procura[strcspn(procura, "\n")] = 0;
 
