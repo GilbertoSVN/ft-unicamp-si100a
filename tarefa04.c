@@ -17,9 +17,8 @@ struct mensagem mens[MAX];
 
 int main()
 {
-	int i, j, opcao, total, achou;
+	int i, j, opcao, total, achou, imprimiu;
 	char procura[41], descript[41];
-	char *encontrou;
 	char letter;
 
 	opcao = 99;
@@ -28,6 +27,7 @@ int main()
 	do
     {
         achou = 0;
+        imprimiu = 0;
 
         printf("****MENU DE CRIPTOGRAFIA****\n");
         printf("1: Criptografar mensagem\n");
@@ -106,9 +106,7 @@ int main()
 
                 for(j = 0; j < total; j++)
                 {
-                    encontrou = strstr(mens[j].cryp_mens, procura);
-
-                    if(encontrou != NULL)
+                    if(strstr(mens[j].cryp_mens, procura) != NULL)
                         achou++;
                 }
 
@@ -154,10 +152,11 @@ int main()
                         printf("%s\n", mens[i].departamento);
                         printf("%s\n", descript);
                         printf("%d\n", mens[i].ID);
+                        imprimiu++;
                     }
                 }
 
-                if(achou != 0)
+                if(imprimiu == 0)
                     printf("****Mensagem nao encontrada!****\n");
 
                 strcpy(procura, "");
