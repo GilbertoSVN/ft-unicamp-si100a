@@ -7,9 +7,9 @@
 
 struct mensagem
 {
-        char nome[100];
-        char departamento[60];
-        char cryp_mens[40];
+        char nome[101];
+        char departamento[61];
+        char cryp_mens[41];
         int ID;
 };
 
@@ -18,7 +18,7 @@ struct mensagem mens[MAX];
 int main()
 {
 	int i, j, opcao, total, achou;
-	char procura[40], descript[40];
+	char procura[41], descript[41];
 	char *encontrou;
 	char letter;
 
