@@ -27,8 +27,6 @@ int main()
 
 	do
     {
-        fflush(stdin);
-
         achou = 0;
 
         printf("****MENU DE CRIPTOGRAFIA****\n");
@@ -44,22 +42,16 @@ int main()
         {
             case 1:
                 printf("****ADICIONAR MENSAGEM****\n");
-
-                fflush(stdin);
-
                 printf("Digite o nome do Agente:\n");
+                fgets(mens[total].nome, 102, stdin);
                 fgets(mens[total].nome, 102, stdin);
 
                 mens[total].nome[strcspn(mens[total].nome, "\n")] = 0;
-
-                fflush(stdin);
 
                 printf("Digite o departamento:\n");
                 fgets(mens[total].departamento, 62, stdin);
 
                 mens[total].departamento[strcspn(mens[total].departamento, "\n")] = 0;
-
-                fflush(stdin);
 
                 printf("Digite a mensagem a ser criptografada:\n");
                 fgets(mens[total].cryp_mens, 42, stdin);
@@ -76,12 +68,9 @@ int main()
                         else
                             mens[total].cryp_mens[j] = mens[total].cryp_mens[j] - 26 + FORWARD;
                     }
-
                 }
 
                 mens[total].cryp_mens[strcspn(mens[total].cryp_mens, "\n")] = 0;
-
-                fflush(stdin);
 
                 printf("Digite o numero de identificacao do agente:\n");
                 scanf("%d", &mens[total].ID);
@@ -93,15 +82,12 @@ int main()
 
                 printf("****ENCONTRAR PADROES****\n");
 
-                fflush(stdin);
-
                 printf("Digite o padrao a ser encontrado:\n");
 
                 fgets(procura, 42, stdin);
+                fgets(procura, 42, stdin);
 
                 procura[strcspn(procura, "\n")] = 0;
-
-                fflush(stdin);
 
                 for(j = 0; j < strlen(procura); j++)
                 {
@@ -135,15 +121,12 @@ int main()
 
                 printf("****DESCRIPTOGRAFAR MENSAGEM****\n");
 
-                fflush(stdin);
-
                 printf("Digite a mensagem criptografada:\n");
 
                 fgets(procura, 42, stdin);
+                fgets(procura, 42, stdin);
 
                 procura[strcspn(procura, "\n")] = 0;
-
-                fflush(stdin);
 
                 strcpy(descript, procura);
 
@@ -159,7 +142,6 @@ int main()
                         else
                             descript[j] = descript[j] + 26 - FORWARD;
                     }
-
                 }
 
                 for(i = 0; i < total; i++)
@@ -174,7 +156,6 @@ int main()
                         printf("%d\n", mens[i].ID);
                         break;
                     }
-
                 }
 
                 if(achou != 0)
@@ -203,8 +184,6 @@ int main()
         }
 
     } while (opcao != 0);
-
-    fflush(stdin);
 
 	return 0;
 }
