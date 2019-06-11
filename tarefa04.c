@@ -18,7 +18,7 @@ struct mensagem mens[MAX];
 int main()
 {
 	int i, j, opcao, total, achou;
-	char procura[42], descript[42];
+	char procura[41], descript[41];
 	char *encontrou;
 	char letter;
 
@@ -43,8 +43,8 @@ int main()
             case 1:
                 printf("****ADICIONAR MENSAGEM****\n");
                 printf("Digite o nome do Agente:\n");
-                fgets(mens[total].nome, 102, stdin);
-                fgets(mens[total].nome, 102, stdin);
+                fgets(mens[total].nome, 101, stdin);
+                fgets(mens[total].nome, 101, stdin);
 
                 mens[total].nome[strcspn(mens[total].nome, "\n")] = 0;
 
@@ -108,7 +108,7 @@ int main()
                 {
                     encontrou = strstr(mens[j].cryp_mens, procura);
 
-                    if(strlen(encontrou) > 1)
+                    if(encontrou != NULL)
                         achou++;
                 }
 
@@ -154,7 +154,6 @@ int main()
                         printf("%s\n", mens[i].departamento);
                         printf("%s\n", descript);
                         printf("%d\n", mens[i].ID);
-                        break;
                     }
                 }
 
