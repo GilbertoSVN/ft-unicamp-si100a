@@ -7,9 +7,9 @@
 
 struct mensagem
 {
-        char nome[101];
-        char departamento[61];
-        char cryp_mens[41];
+        char nome[102];
+        char departamento[62];
+        char cryp_mens[42];
         int ID;
 };
 
@@ -18,7 +18,7 @@ struct mensagem mens[MAX];
 int main()
 {
 	int i, j, opcao, total, achou;
-	char procura[41], descript[41];
+	char procura[42], descript[42];
 	char *encontrou;
 	char letter;
 
@@ -48,21 +48,21 @@ int main()
                 fflush(stdin);
 
                 printf("Digite o nome do Agente:\n");
-                fgets(mens[total].nome, 101, stdin);
+                fgets(mens[total].nome, 102, stdin);
 
                 mens[total].nome[strcspn(mens[total].nome, "\n")] = 0;
 
                 fflush(stdin);
 
                 printf("Digite o departamento:\n");
-                fgets(mens[total].departamento, 61, stdin);
+                fgets(mens[total].departamento, 62, stdin);
 
                 mens[total].departamento[strcspn(mens[total].departamento, "\n")] = 0;
 
                 fflush(stdin);
 
                 printf("Digite a mensagem a ser criptografada:\n");
-                fgets(mens[total].cryp_mens, 41, stdin);
+                fgets(mens[total].cryp_mens, 42, stdin);
 
                 for(j = 0; j < strlen(mens[total].cryp_mens); j++)
                 {
@@ -97,7 +97,7 @@ int main()
 
                 printf("Digite o padrao a ser encontrado:\n");
 
-                fgets(procura, 41, stdin);
+                fgets(procura, 42, stdin);
 
                 procura[strcspn(procura, "\n")] = 0;
 
@@ -139,7 +139,7 @@ int main()
 
                 printf("Digite a mensagem criptografada:\n");
 
-                fgets(procura, 41, stdin);
+                fgets(procura, 42, stdin);
 
                 procura[strcspn(procura, "\n")] = 0;
 
@@ -172,12 +172,13 @@ int main()
                         printf("%s\n", mens[i].departamento);
                         printf("%s\n", descript);
                         printf("%d\n", mens[i].ID);
+                        break;
                     }
-                    else
-                    {
-                        printf("****Mensagem nao encontrada!****\n");
-                    }
+
                 }
+
+                if(achou != 0)
+                    printf("****Mensagem nao encontrada!****\n");
 
                 strcpy(procura, "");
 
